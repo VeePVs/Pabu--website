@@ -1,0 +1,191 @@
+body {
+    background-color: #cb2b85;
+background-image: linear-gradient(225deg, #d83290 0%, #784BA0 50%, #2B86C5 100%);
+
+    font-size: 1.5em;
+}
+
+main{
+    height: 98vh;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    transition: 0.5s;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #f3f3f3 0%, #80D0C7 100%);
+    text-align: center;
+    height: 59vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+main div h2{
+    font-family: "Mukta", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.8em;
+    color: rgb(18, 15, 15);
+    transition: 0.5s;
+    margin: 3% 0%;
+}
+
+input {
+    
+    color: #ffffff;
+    background-color: #62686e;
+    margin-top: 6px;
+    height: 30px;
+    width: 60%;
+    border-radius: 10px;
+    border: 0;
+    font-size: 0.6em;
+    transition: 1s;
+    outline: none;
+}
+
+input:focus{
+    font-size: 0.8em;
+    transition: 1s;
+    height: 40px;
+}
+
+input::placeholder{ 
+    
+    color: rgb(169, 193, 192);
+}
+
+#registrarse {
+    margin-top: 25px;
+    border: 0;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    font-family: "Mukta", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    color: rgb(230, 222, 222);
+    letter-spacing: 2px;
+    border-radius: 6px;
+    font-size: 0.6em;
+    width:40%;
+    height: 40px;
+    transition: 0.3s;
+}
+
+.modal {
+    background-color: #ff0a0a79;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open {
+    opacity: 1;
+    z-index: 999;
+}
+
+.modal-inner {
+    background-color: #ffffffc9;
+    border-radius: 15px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 15px 25px;
+    text-align: center;
+    width: 380px;
+}
+
+#closeModal {
+    background-color: rgb(0, 0, 0);
+    border: 0;
+    height: 50px;
+    font-family: "Mukta", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    color: rgb(230, 222, 222);
+    letter-spacing: 2px;
+    border-radius: 6px;
+    font-size: 0.6em;
+    transition: 0.3s;
+}
+
+
+p {
+    font-family: "Mukta", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+#registrarse:hover {
+    background-color: #042e466d ;
+    color: aliceblue;
+    transition: 0.3s;
+}
+
+#registrarse:active {
+    transition: 0.1s;
+    width: 55%;
+}
+
+#volverInicio {
+    font-family: "Mukta", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 20px;
+    color: #f6f4f4;
+    
+    transition: 1s;
+}
+
+#volverInicio:hover {
+    color: rgb(162, 162, 162);
+    font-size: 24px;
+    transition: 1s;
+}
+
+.validadorContra {
+    display: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    color: #d83290;
+    font-weight: 700;
+    transition: 1s;
+}
+
+@media only screen and (min-width: 535px) {
+    .contenedor{
+        width: 80%;
+        transition: 0.5s;
+    }
+
+    main div h2{
+        transition: 0.5s;
+        font-size: 2em;
+    }
+}
+
+
+
+@media only screen and (min-width: 774px) {
+    .contenedor{
+        width: 620px;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/bauhaus-93" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/login.js" defer></script>
+    <title>Login - Pabu! Cacharreria, ropa y mas</title>
+</head>
+<body>
+    <main>
+        <div class="contenedor">
+            <h2>Iniciar sesión</h2>
+            <form action="/validarLogin" method="post">
+                <input type="text" placeholder="Usuario" class="inputLogin" id="userLo" name="userLo">
+                <input type="password" placeholder="Contraseña" class="inputLogin" id="passwordLo" name="passwordLo">
+                <button type="submit" id="iniciar">Login</button>
+            
+            </form>
+            <div>
+                <button id="ForgetPassword" onclick="location.href='/forgotpassword'">¿Olvidaste tu contraseña?</button>
+                <button id="registrarse" onclick="location.href='/register'">Registrarse</button>
+            </div>
+            <p id="datosErrados">Datos errados</p>
+        </div>
+        <% if(message.length > 0) { %>
+            <div class="alert alert-success modal open" id="modal">
+                <div class="modal-inner">
+                    <h2>ERROR</h2>
+                    <p>
+                        <%= message %>
+                    </p>
+                    <button id="closeModal">Cerrar</button>
+                </div>
+            </div>
+        <% } %>    
+    </main>
+    
+</body>
+</html>
