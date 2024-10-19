@@ -146,10 +146,11 @@ p {
     font-weight: 800;
     font-style: normal;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
     color: #f6f4f4;
-    
     transition: 1s;
+    position: relative;
+    top: 40px;
 }
 
 #volverInicio:hover {

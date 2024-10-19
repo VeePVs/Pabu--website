@@ -6,7 +6,6 @@ var session = require('express-session');
 var flush = require('connect-flash');
 const nodemailer = require('nodemailer');
 const database = require("./database");
-const cors = require("cors");
 
 let conexion = mysql.createConnection({
     host: process.env.host,
@@ -73,7 +72,7 @@ app.post("/validarLogin", function(req, resL) {
     let nickname = datos.userLo;
     let password = datos.passwordLo;
 
-    let buscarNick = 'SELECT * FROM usuario WHERE nickname = "'+nickname+'"';
+    let buscarNick = 'SELECT * FROM cliente WHERE nickname = "'+nickname+'"';
 
     conexion.query(buscarNick, (err, res) => {
         if(err) throw err;
@@ -109,9 +108,9 @@ app.post("/validarRegistro", (req, resL) => {
     let password = datos.passwordInput;
     let nickname = datos.userInput;
 
-    let buscarCe = "SELECT * FROM usuario WHERE id = "+cedula+"";
-    let buscarEmail = 'SELECT * FROM usuario WHERE email = "'+email+'"';
-    let buscarNick = 'SELECT * FROM usuario WHERE nickname = "'+nickname+'"';
+    let buscarCe = "SELECT * FROM cliente WHERE id = "+cedula+"";
+    let buscarEmail = 'SELECT * FROM cliente WHERE email = "'+email+'"';
+    let buscarNick = 'SELECT * FROM cliente WHERE nickname = "'+nickname+'"';
 
     conexion.query(buscarCe, (err, res) => {
         if(err) throw err;
@@ -137,7 +136,7 @@ app.post("/validarRegistro", (req, resL) => {
                                         req.flash('message', 'NICKNAME YA EXISTE NO SE PUEDE REGISTRAR');
                                         resL.redirect('/register')
                                     } else {
-                                        let registrar = "INSERT INTO usuario (id,nombre,apellido,contrasenia,nickname,email) VALUES ('"+cedula+"','"+nombre+"','"+apellido+"','"+password+"','"+nickname+"','"+email+"')";
+                                        let registrar = "INSERT INTO cliente (id,nombre,apellido,contrasenia,nickname,email) VALUES ('"+cedula+"','"+nombre+"','"+apellido+"','"+password+"','"+nickname+"','"+email+"')";
                                         conexion.query(registrar, (err) => {
                                             if(err) throw err;
                                             console.log("Datos guardados exitosamente")
@@ -164,7 +163,7 @@ app.post("/sendNudes", (req, resD) => {
     const datos = req.body;
     let email = datos.inputLogin;
 
-    let consultaEmail = 'SELECT * FROM usuario WHERE email = "'+email+'"';
+    let consultaEmail = 'SELECT * FROM cliente WHERE email = "'+email+'"';
 
     conexion.query(consultaEmail, async(err, res) => {
         if(err) throw err;

@@ -186,6 +186,7 @@ main {
 }
 
 .parteTexto {
+    padding: 0 80px;
     width: 100%;
     text-align: center;
     background-color: white;
